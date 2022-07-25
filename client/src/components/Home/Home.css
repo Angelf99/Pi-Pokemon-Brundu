@@ -1,0 +1,93 @@
+
+h1{
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Pokemon Solid', sans-serif;
+    color: yellow;
+    border: 300px;
+    font-size: 20vh;
+    margin-top: -15vh;
+    margin-bottom: -5vh
+}
+
+.Cards{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+html{
+    background-color: #0ed9d9;
+    background-image: url(C:\Users\Angel\Desktop\PI\PI-Pokemon-main\client\src\components\Utils\fondo.jpg);
+    background-repeat: no-repeat;
+    /* background-size: 90vw; */
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    margin-top: 0vh;
+    
+
+
+    /* object-position: center; */
+}
+.Navbar{
+    background-color:   #e83939df ;
+    height: 12vh;
+    min-height:90px;
+    width: 100%;
+    position:sticky;
+    top: 0vh;
+    right: 0vw;
+    z-index: 100;
+    overflow: hidden;
+}
+.Navbar img{
+    /* margin-top: 2vh; */
+    height:90px;
+    
+}
+.filters{
+    width: 30vw;
+    height: 12vh;
+    position: absolute;
+    flex-direction: row;
+    margin:12px
+}
+.filters select{
+    display: inline;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    width: 10vw;
+
+}
+.searchBar{
+    position: absolute;
+    top:0vh;
+    right: 2vw;
+    margin: 15px;
+    width: 30vw;
+}
+.searchBar button{
+    display: block;
+    width: 30vw;
+    background-color: yellow;
+    border: 0vw;
+    border-radius: 4%;
+    margin-top: 0.5vh;
+    margin-left: 0.3vw ;
+}
+.searchBar input{
+    width: 30vw;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.create{
+    text-decoration: none;
+}
+.Loadingimg{
+    position:relative;
+    top:-90px;
+    left: 0vw;
+    width: 300px;
+}

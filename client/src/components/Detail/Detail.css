@@ -1,0 +1,8 @@
+.goBack{
+    z-index: 100;
+}
+.LoadingDetail{
+ position: fixed;
+ top: -30vh;
+ left:10vw
+}

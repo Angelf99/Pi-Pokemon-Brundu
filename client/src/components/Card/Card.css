@@ -1,0 +1,60 @@
+.Card{
+    background-image:url(C:\Users\Angel\Desktop\PI\PI-Pokemon-main\client\src\components\Utils\Card.webp);
+    background-size: 100% 100%;   
+    background-repeat: no-repeat;
+    height: 85vh;
+    overflow: hidden;
+    margin: 3vh 1vw;
+    display:inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10%;
+    min-width: 50vh;
+    width: 30vw;
+   
+}
+
+.Card img{
+    width: 100%;
+    height: 50%;
+    display: block;
+    z-index: -1;
+    filter: drop-shadow(16px 16px 20px black)
+    
+    
+    /* margin-top: 2vh; */
+}
+.poke-name {
+
+    font-size: 3vw;
+    font-family: 'Pokemon Solid', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: linear-gradient(315deg, rgba(162,82,98,1) 26%, rgba(252,255,0,1) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}.Datacard{
+    overflow:hidden;
+ 
+}
+
+.Types{
+    
+    margin-bottom: 15vh;
+    display: inline-flex;
+    flex-direction: column;
+    align-items:center;
+  
+   
+   
+}
+.Types p{
+    font-size: 4vh;
+    margin-bottom: 0vh;
+    text-transform: capitalize;
+}
+.Types p:hover{
+    font-size: 5vh;
+}

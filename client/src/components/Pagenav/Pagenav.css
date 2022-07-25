@@ -1,0 +1,12 @@
+.Number:hover{
+    cursor:pointer
+}
+.Number{
+    font-size: 5vh;
+    background-color:  #85929e66 ;
+    
+    border: 5vh;
+    border-radius: 20%;
+    padding: 1vh;
+    margin:1vh
+}

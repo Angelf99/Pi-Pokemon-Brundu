@@ -1,0 +1,168 @@
+.bug::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/bug.png);
+    background-size: contain;
+    
+    
+}
+.fairy::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/fairy.png);
+    background-size: contain;
+    
+    
+}
+.ghost::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/ghost.png);
+    background-size: contain;
+    
+    
+}
+.water::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/water.png);
+    background-size: contain;
+}
+.fire::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/fire.png);
+    background-size: contain;
+}
+.dark::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/dark.png);
+    background-size: contain;
+}
+.grass::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/grass.png);
+    background-size: contain;
+}
+.poison::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/poison.png);
+    background-size: contain;
+}
+.dragon::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/dragon.png);
+    background-size: contain;
+}
+.electric::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/electric.png);
+    background-size: contain;
+}
+.fighting::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/fighting.png);
+    background-size: contain;
+}
+.normal::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/normal.png);
+    background-size: contain;
+}
+.flying::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/flying.png);
+    background-size: contain;
+}
+.steel::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/steel.png);
+    background-size: contain;
+}
+.rock::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/rock.png);
+    background-size: contain;
+}
+.psychic::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/psychic.png);
+    background-size: contain;
+}
+.ice::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/ice.png);
+    background-size: contain;
+}
+.ground::before{
+    content:'';
+    display: inline-block;
+    margin-top: 0vh;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../Utils/ground.png);
+    background-size: contain;
+}
