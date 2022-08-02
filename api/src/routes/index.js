@@ -73,7 +73,7 @@ router.get('/pokemons',async (req,res)=>{
     // console.log(name)
     let pokemons= await getAllData()
     if(name){
-        let pokemonName = pokemons.filter((e)=> e.name.toLowerCase().includes(name.toLowerCase()));//RETURN IMPLICITO con === en vez de includes me busca solo lo que se igual bulbasor no me va a dar bulbasor pro por ej
+        let pokemonName = pokemons.filter((e)=> e.name.toLowerCase()===name.toLowerCase());//RETURN IMPLICITO con === en vez de includes me busca solo lo que se igual bulbasor no me va a dar bulbasor pro por ej
         // console.log(pokemonName)
         pokemonName.length?
         res.status(200).send(pokemonName):

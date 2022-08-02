@@ -1,26 +1,42 @@
 import axios from 'axios';
+import { ERROR, FILTER_BY_TYPE, FILTER_CREATED, GET_DETAIL, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME } from './types';
 
 export function getAllPokemons(){
     return async function(dispatch){
-        var json = await axios.get('http://localhost:3001/pokemons',{});
-        return dispatch({
-            type:'GET_POKEMONS',
-            payload: json.data
-        });
-    }
+        try{
+            var json = await axios.get('http://localhost:3001/pokemons',{});
+            return dispatch({
+                type:'GET_POKEMONS',
+                payload: json.data
+            });
+        }catch(err){return dispatch({
+            type:ERROR,
+            payload:{
+                name:err.name,
+                message:err.message
+            }
+        })
+        }
+    }   
 }
 export function getPokemonByName(name){
     return async function (dispatch){
         try{
             var json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
             return dispatch({
-                type:'GET_POKEMON_BY_NAME',
+                type:GET_POKEMON_BY_NAME,
                 payload: json.data
             })
         }
-        catch(err){
-            console.log(err)
-        }
+        catch(err){return dispatch({
+            type:ERROR,
+            payload:{
+                type:'Unknown',
+                name:err.name,
+                message:err.message
+            }
+        })
+    }
     }
 }
 export function getTypes(){
@@ -28,11 +44,20 @@ export function getTypes(){
         try{
             var json = await axios.get('http://localhost:3001/types')
             return dispatch({
-                type:'GET_TYPES',
+                type:GET_TYPES,
                 payload:json.data
             })
         }
-        catch(err){console.log(err)}
+        catch(err){
+            return dispatch({
+                type:ERROR,
+                payload:{
+                    type:'types',
+                    name:err.name,
+                    message:err.message
+                }
+            })
+        }
     }
 }
 export function postPokemon(payload){
@@ -45,42 +70,72 @@ export function postPokemon(payload){
             // })
             return json
         }
-        catch(err){console.log(err)}
+        catch(err){return dispatch({
+            type:ERROR,
+            payload:{
+                type:'post',
+                name:err.name,
+                message:err.message
+            }
+        })
+    }
     }
 }
-export function fPokemonByType(payload){
-    return{
-        type:'FILTER_BY_TYPE',
-        payload
-    }
-}
-export function fPokemonCreated(payload){
-    return{
-        type:'FILTER_CREATED',
-        payload
-    }
-}
-export function orderByAttack(payload){
-    return{
-        type:'ORDER_BY_ATTACK',
-        payload
-    }
-}
-export function orderByName(payload){
-    return{
-        type: 'ORDER_BY_NAME',
-        payload
-    }
-}
+
 export function getDetail(id){
     return async function(dispatch){
         try{
             var json = await axios.get(`http://localhost:3001/pokemons/${id}`)
             return dispatch({
-                type:'GET_DETAIL',
+                type:GET_DETAIL,
                 payload:json.data
             })
         }
-        catch(err){console.log(err)}
+        catch(err){return dispatch({
+            type:ERROR,
+            payload:{
+                type:'detail',
+                name:err.name,
+                message:err.message
+            }
+        })
+    }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+export function fPokemonByType(payload){
+    return{
+        type:FILTER_BY_TYPE,
+        payload
+    }
+}
+export function fPokemonCreated(payload){
+    return{
+        type:FILTER_CREATED,
+        payload
+    }
+}
+export function orderByAttack(payload){
+    return{
+        type:ORDER_BY_ATTACK,
+        payload
+    }
+}
+export function orderByName(payload){
+    return{
+        type: ORDER_BY_NAME,
+        payload
     }
 }

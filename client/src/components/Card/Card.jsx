@@ -11,9 +11,11 @@ export default function Card({name, img, types, id}){
         <div className='Card'> 
             
             <div className="Datacard">
-            <Link to={`/home/${id}`} className='poke-name'>{name}</Link>
+            
             <img src={img} alt="pokemounstro" className='img'/>
+            
              <div className='Types'>   
+            <Link to={`/home/${id}`} className='poke-name'>{name}</Link>
             {types?.map(e=>{
                     {return (<p className={e}>{e}</p>)}
             })}

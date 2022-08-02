@@ -16,7 +16,7 @@ function App() {
           <Route path='/home/:id' component={Detail}/>
         </Switch>
       </div>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

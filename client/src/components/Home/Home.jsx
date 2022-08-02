@@ -12,6 +12,7 @@ import bug from '../Utils/bug.png'
 export default function Home(){
     const dispatch=useDispatch()
     const allPokemons = useSelector((state)=>state.pokemons)
+    const error = useSelector((state)=>state.error)
     const [orden,setOrden]= useState('')
     const [actualPage,setActualPage] = useState(1)
     const [cardsXPage,setCardsPage] = useState(12)
@@ -23,7 +24,8 @@ export default function Home(){
         }
     
     useEffect(()=>{
-        dispatch(getAllPokemons())},[dispatch])
+        dispatch(getAllPokemons())
+    },[dispatch])
 
     function handleClick (e){
         e.preventDefault()
@@ -59,24 +61,25 @@ export default function Home(){
                 <div className='filters'>
 
                     <select className='pointer' onChange={e =>handleFilterCreated(e)}>
-                        <option value="All">All</option>
-                        <option value="created">Created</option>
-                        <option value="api">From Api</option>
+                        <option value="All">Todos</option>
+                        <option value="created">Creados</option>
+                        <option value="api">De la Api</option>
                     </select>
 
                     <select className='pointer' onChange={e =>handleSortByAttack(e)}>
-                        <option>Filter by Attack</option>
-                        <option value="Asc">Less attack</option>
-                        <option value="Desc">More attack</option>
+                        <option disabled selected>Ordenar Por Ataque</option>
+                        <option value="Asc">Menos Ataque</option>
+                        <option value="Desc">Más Ataque</option>
                     </select>
                     <br />
                     <select className='pointer' onChange={e =>handleSortByName(e)}>
+                        <option disabled selected >Ordenar Por Nombre</option>
                         <option value="A-Z">A-Z</option>
                         <option value="Z-A">Z-A</option>
                     </select>
 
                     <select className='pointer' onChange={e =>handleFilterType(e)}>
-                        <option value="All">Sort by Type</option>
+                        <option value="All">Ordenar por tipo</option>
                         <option value="fighting">Fighting</option>
                         <option value="water">Water</option>
                         <option value="ice">Ice</option>
@@ -105,13 +108,18 @@ export default function Home(){
             </div>
             <h1>PokePage</h1>
             <div className='Cards'>
-                {pokemonCards.length?
-                    pokemonCards?.map(e=>{
-                        return(
-                            <Card name={e.name} types={e.types} img={e.img} key={e.id} id={e.id}/> 
-                        )
-                 }):<img className='Loadingimg' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/029b8bd9-cb5a-41e4-9c7e-ee516face9bb/dayo3ow-7ac86c31-8b2b-4810-89f2-e6134caf1f2d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAyOWI4YmQ5LWNiNWEtNDFlNC05YzdlLWVlNTE2ZmFjZTliYlwvZGF5bzNvdy03YWM4NmMzMS04YjJiLTQ4MTAtODlmMi1lNjEzNGNhZjFmMmQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ooubhxjHp9PIMhVxvCFHziI6pxDAS8glXPWenUeomWs" alt="loading..." />
-                 }
+                
+                {
+                    pokemonCards.length?
+                        pokemonCards?.map(e=>{
+                            return(
+                                <Card name={e.name} types={e.types} img={e.img} key={e.id} id={e.id}/> 
+                            )
+                    }):<div><img className='Loadingimg' src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/029b8bd9-cb5a-41e4-9c7e-ee516face9bb/dayo3ow-7ac86c31-8b2b-4810-89f2-e6134caf1f2d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAyOWI4YmQ5LWNiNWEtNDFlNC05YzdlLWVlNTE2ZmFjZTliYlwvZGF5bzNvdy03YWM4NmMzMS04YjJiLTQ4MTAtODlmMi1lNjEzNGNhZjFmMmQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ooubhxjHp9PIMhVxvCFHziI6pxDAS8glXPWenUeomWs" alt="loading..." />{error.length===0?<></>:<div><p>No se encuentran pokemons</p>
+                    <p>{error.message}</p>
+                    <p>{error.name}</p></div>}</div>
+                    
+                }
             </div>
             <div className='Pages'>
                     <Pagenav cardsXPage={cardsXPage}

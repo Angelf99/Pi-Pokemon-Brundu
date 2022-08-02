@@ -1,26 +1,34 @@
+import { ERROR, FILTER_BY_TYPE, FILTER_CREATED, GET_DETAIL, GET_POKEMONS, GET_POKEMON_BY_NAME, GET_TYPES, ORDER_BY_ATTACK, ORDER_BY_NAME, POST_POKEMON } from "../actions/types"
+
 const initialState = {
     pokemons : [],
     allPokemons:[],
     types:[],
-    pokemonDetail:[]
+    pokemonDetail:[],
+    error:[]
 }
 export default function rootReducer (state= initialState,action){
     switch(action.type){
-        case 'GET_POKEMONS':
+        case ERROR:
+            return{
+                ...state,
+                error:action.payload
+            }
+        case GET_POKEMONS:
             return{
                 ...state,
                 pokemons:action.payload,
                 allPokemons: action.payload
             }
         
-        case 'FILTER_BY_TYPE':
+        case FILTER_BY_TYPE:
             const allPokemons = state.allPokemons
             const pokemonFTypes = action.payload === 'All' ? allPokemons : allPokemons.filter(e => e.types.find(e=> e === action.payload) === action.payload)//fijarse con lo de la db
             return{
                 ...state,
                 pokemons: pokemonFTypes
             }
-        case 'FILTER_CREATED':
+        case FILTER_CREATED:
             const pokemones = state.allPokemons
             const pokemonFCreated = action.payload === 'created' ? pokemones.filter(e=> e.createAtDB): pokemones.filter(e=> !e.createAtDB)
             return{
@@ -28,7 +36,7 @@ export default function rootReducer (state= initialState,action){
                 pokemons: action.payload === 'All' ? pokemones: pokemonFCreated
               }
 
-        case 'ORDER_BY_ATTACK':
+        case ORDER_BY_ATTACK:
             let sortPokemons = action.payload === 'Asc' ?
               state.pokemons.sort(function(a,b){
                 if(a.attack > b.attack){
@@ -52,7 +60,7 @@ export default function rootReducer (state= initialState,action){
                 ...state,
                 pokemons:sortPokemons
             }
-        case 'ORDER_BY_NAME':
+        case ORDER_BY_NAME:
             let sortName = action.payload === 'A-Z' ?
               state.pokemons.sort(function(a,b){
                 if(a.name > b.name){
@@ -76,21 +84,21 @@ export default function rootReducer (state= initialState,action){
                 ...state,
                 pokemons:sortName
             }
-        case 'GET_POKEMON_BY_NAME':
+        case GET_POKEMON_BY_NAME:
                 return{
                     ...state,
                     pokemons: action.payload
                 }
-        case 'GET_TYPES':
+        case GET_TYPES:
             return{
                 ...state,
                 types: action.payload
             }
-        case 'POST_POKEMON':
+        case POST_POKEMON:
             return{
                 ...state
             }
-        case 'GET_DETAIL':
+        case GET_DETAIL:
             return{
                 ...state,                    
                 pokemonDetail: action.payload

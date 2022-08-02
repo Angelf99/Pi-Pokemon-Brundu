@@ -7,7 +7,16 @@ h1{
     border: 300px;
     font-size: 20vh;
     margin-top: -15vh;
-    margin-bottom: -5vh
+    margin-bottom: -5vh;
+    text-shadow:
+    6px -6px 0 rgb(55, 0, 255), 
+    6px -6px 0 rgb(55, 0, 255), 
+    6px -6px 0 rgb(55, 0, 255), 
+    6px -6px 0 rgb(55, 0, 255),
+        -6px 6px 0 rgb(55, 0, 255), 
+        -6px 6px 0 rgb(55, 0, 255), 
+        -6px 6px 0 rgb(55, 0, 255), 
+        -6px 6px 0 rgb(55, 0, 255);
 }
 
 .Cards{
@@ -83,11 +92,18 @@ html{
 }
 
 .create{
+    padding: 30px;
     text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
 }
 .Loadingimg{
     position:relative;
     top:-90px;
     left: 0vw;
     width: 300px;
+}
+.culia{
+    position: absolute;
+    top: 0;
+    left:0;
 }

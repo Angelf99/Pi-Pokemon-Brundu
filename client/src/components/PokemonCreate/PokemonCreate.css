@@ -1,7 +1,69 @@
-.h1Create{
-    z-index: -1
-    ;
+.dataCreate{
+    width: 100%;
+    display:inline-flex;
+    justify-content: space-around;
+    
 }
-goBack{
-    z-index: 100;
+.InputsCreate{
+    display: flex;
+    flex-direction: column;
+    /* align-items: baseline; */
+    width: 30vw;
+    
+}
+.InputsCreate label{
+    display: inline-flex;
+    margin-bottom: 2vh;
+    width: 100%;
+    position: relative;
+    
+}
+.InputsCreate label input{
+    position:absolute;
+    width: 90px;
+    right: 0px;
+    
+}
+.typesCreate{
+    width: 50vw;
+    display: inline-flex;
+    flex-direction: column;
+    
+}
+.typ{
+    width: 100%;
+    height: 90%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.typ label{
+    margin:0px 10px
+}
+form button{
+    border: 2px solid white;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 15%;
+    background-color: rgba(197, 152, 38, 0.847);
+}
+form button:hover{
+    background-color: rgba(197, 152, 38, 0.847);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+form label{
+    background-color: rgb(207, 28, 28);
+}
+form p{
+    color: red;
+    font-weight: bold;
 }

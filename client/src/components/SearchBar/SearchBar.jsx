@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import {useEffect}from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {getPokemonByName} from '../../actions'
   
  export default function SearchBar (){
     const dispatch=useDispatch()
+    const error = useSelector((state)=>state.error)
     const [name,setName]= useState('')
     function handleInputChange(e){
         e.preventDefault()
@@ -14,17 +15,22 @@ import {getPokemonByName} from '../../actions'
     function handleSubmit(e){
         e.preventDefault()
         dispatch(getPokemonByName(name))
-        // setName('')
+        setName('')
+        error.type='' 
     }
-
+  
+    
     return(
         <div>
+            {error.type==='Unknown'?<p className="culia">No existe dicho pokemon</p>:<></>}
             <input type="text"
             placeholder="Pokename..."
             onChange={(e)=>handleInputChange(e)}
             className='pointer'
+            value={name}
             />
             <button type="submit" onClick={(e)=>handleSubmit(e)} className='pointer'>Buscar</button>
+            
         </div>
     )
  }
