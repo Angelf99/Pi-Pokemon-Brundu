@@ -27,7 +27,7 @@ h1{
 }
 html{
     background-color: #0ed9d9;
-    background-image: url(C:\Users\Angel\Desktop\PI\PI-Pokemon-main\client\src\components\Utils\fondo.jpg);
+    background-image: url(/client/src/components/Utils/fondo.jpg);
     background-repeat: no-repeat;
     /* background-size: 90vw; */
     background-attachment: fixed;
