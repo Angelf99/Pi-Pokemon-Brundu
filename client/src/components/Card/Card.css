@@ -1,7 +1,7 @@
 .Card{
-    /* background-image:url(C:\Users\Angel\Desktop\PI\PI-Pokemon-main\client\src\components\Utils\Card.jpg);
+    background-image:url(C:\Users\Angel\Desktop\PI\PI-Pokemon-main\client\src\components\Utils\Card.jpg);
     background-size: 100% 100%;   
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-color: aqua;
     height: 85vh;
     overflow: hidden;
