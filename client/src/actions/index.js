@@ -4,7 +4,7 @@ import { ERROR, FILTER_BY_TYPE, FILTER_CREATED, GET_DETAIL, GET_POKEMON_BY_NAME,
 export function getAllPokemons(){
     return async function(dispatch){
         try{
-            var json = await axios.get('http://localhost:3001/pokemons',{});
+            var json = await axios.get('/pokemons',{});
             return dispatch({
                 type:'GET_POKEMONS',
                 payload: json.data
@@ -22,7 +22,7 @@ export function getAllPokemons(){
 export function getPokemonByName(name){
     return async function (dispatch){
         try{
-            var json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+            var json = await axios.get (`/pokemons?name=${name}`)
             return dispatch({
                 type:GET_POKEMON_BY_NAME,
                 payload: json.data
@@ -42,7 +42,7 @@ export function getPokemonByName(name){
 export function getTypes(){
     return async function(dispatch){
         try{
-            var json = await axios.get('http://localhost:3001/types')
+            var json = await axios.get('/types')
             return dispatch({
                 type:GET_TYPES,
                 payload:json.data
@@ -63,11 +63,7 @@ export function getTypes(){
 export function postPokemon(payload){
     return async function(dispatch){
         try{
-            var json =await axios.post('http://localhost:3001/pokemons',payload)
-            // return dispatch({
-            //     type: 'POST_POKEMON',
-            //     payload:json.data
-            // })
+            var json =await axios.post('/pokemons',payload)
             return json
         }
         catch(err){return dispatch({
@@ -85,7 +81,7 @@ export function postPokemon(payload){
 export function getDetail(id){
     return async function(dispatch){
         try{
-            var json = await axios.get(`http://localhost:3001/pokemons/${id}`)
+            var json = await axios.get(`/${id}`)
             return dispatch({
                 type:GET_DETAIL,
                 payload:json.data
@@ -102,18 +98,6 @@ export function getDetail(id){
     }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 export function fPokemonByType(payload){
     return{

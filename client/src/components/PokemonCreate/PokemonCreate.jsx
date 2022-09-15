@@ -80,6 +80,10 @@ export default function PokemonCreate(){
 // console.log(input.hp.value)
     function handleSubmit(e){
         e.preventDefault()
+        if(!input.name){
+            alert('Debe poseer nombre')
+            return
+        }
         if(Object.keys(err).length>0){
             alert('Datos invalidos')
             return
@@ -123,7 +127,7 @@ export default function PokemonCreate(){
     },[])
 
     return(
-        <div>
+        <div className="creado">
             <h1 className="h1Create">Crea tu Pokemon</h1>
             <form onSubmit={e=>handleSubmit(e)}>
             <div className="dataCreate">    
@@ -215,7 +219,7 @@ export default function PokemonCreate(){
                 
                 {error.type==='post'?<div>Ocurrio un error al posetear verificar url</div>:<></>}
             </form>
-            <Link to='/home' className="goBack">Volver al home</Link>
+            <Link to='/home' className="goBack create">Volver al home</Link>
         </div>
     )
     // <option value="steel">Steel</option>

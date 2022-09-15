@@ -67,3 +67,9 @@ form p{
     color: red;
     font-weight: bold;
 }
+.creado .goBack{
+    background-color: red;
+    position: absolute;
+    top:95vh;
+    left:-7vw;
+  }
