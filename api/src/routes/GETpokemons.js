@@ -17,25 +17,25 @@ router.get('/',async (req,res)=>{
     res.status(200).send(pokemons);
     }
 });
-// router.get('/:id',async (req,res)=>{
-//     const id = req.params.id
-//     const pokemons= await getAllData()
-//     console.log(pokemons)
-//     if(id){
-//       let pokemon = pokemons.filter(e=> e.id == id)
-//       pokemon.length?
-//       res.status(200).send(pokemon):
-//       res.status(404).send('No existe pokemon con ese id')
-//     }
-//   })
-router.get('/:id', (req,res)=>{
-  const id = req.params.id
-  getAllData().then((resp)=>{if(resp.length){
-    let pokemon = resp.filter(e=> e.id == id)
-    pokemon.length?
-    res.status(200).send(pokemon):
-    res.status(404).send('No existe pokemon con ese id')
-  }})
+router.get('/:id',async (req,res)=>{
+    const id = req.params.id
+    const pokemons= await getAllData()
+    console.log(id)
+    if(id){
+      let pokemon = pokemons.filter(e=> e.id == id)
+      pokemon.length?
+      res.status(200).send(pokemon):
+      res.status(404).send('No existe pokemon con ese id')
+    }
+  })
+// router.get('/:id', (req,res)=>{
+//   const id = req.params.id
+//   getAllData().then((resp)=>{if(resp.length){
+//     let pokemon = resp.filter(e=> e.id == id)
+//     pokemon.length?
+//     res.status(200).send(pokemon):
+//     res.status(404).send('No existe pokemon con ese id')
+//   }})
   
-})
+// })
   module.exports = router;

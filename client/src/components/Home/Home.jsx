@@ -76,6 +76,11 @@ export default function Home(){
 
             </div>
             <h1>PokePage</h1>
+            <div className='Pages'>
+                    <Pagenav cardsXPage={cardsXPage}
+                    allPokemons={allPokemons.length}
+                    paginado={paginado} />
+            </div>      
             <div className='Cards'>
                 
                 {
@@ -90,11 +95,7 @@ export default function Home(){
                     
                 }
             </div>
-            <div className='Pages'>
-                    <Pagenav cardsXPage={cardsXPage}
-                    allPokemons={allPokemons.length}
-                    paginado={paginado} />
-            </div>            
+                 
         </div>
     )
 

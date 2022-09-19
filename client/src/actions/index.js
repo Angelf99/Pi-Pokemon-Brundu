@@ -81,7 +81,7 @@ export function postPokemon(payload){
 export function getDetail(id){
     return async function(dispatch){
         try{
-            var json = await axios.get(`/${id}`)
+            var json = await axios.get(`pokemons/${id}`)
             return dispatch({
                 type:GET_DETAIL,
                 payload:json.data

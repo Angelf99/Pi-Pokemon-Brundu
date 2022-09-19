@@ -4,10 +4,10 @@ h1{
     justify-content: center;
     font-family: 'Pokemon Solid', sans-serif;
     color: yellow;
-    border: 300px;
+    /* border: 300px; */
     font-size: 20vh;
-    margin-top: -15vh;
-    margin-bottom: -5vh;
+    /* margin-top: -15vh;
+    margin-bottom: -5vh; */
     text-shadow:
     6px -6px 0 rgb(55, 0, 255), 
     6px -6px 0 rgb(55, 0, 255), 
